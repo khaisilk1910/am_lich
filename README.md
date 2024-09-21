@@ -5,6 +5,5 @@ Mình lấy nguồn từ https://github.com/dungdoanh/amlich
 
 Mình có làm thêm hiển thị thông tin ngày âm ta html.
 
-![image](https://github.com/user-attachments/assets/1566f92d-4b01-4dc6-a136-8e8079e0b8c1)
-
+![image](https://github.com/user-attachments/assets/d3567550-8c2a-4201-a489-8e1d50346b75)
 
