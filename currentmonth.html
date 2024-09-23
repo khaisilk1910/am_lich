@@ -2,8 +2,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="refresh" content="5">
-	<title>Ho Ngoc Duc's Lunar Calendar</title>
+	<meta http-equiv="refresh" content="60">
+	<style>
+		body {
+			background: transparent;
+		}
+	 </style>
+	<title>Lunar Calendar</title>
 	<SCRIPT LANGUAGE="JavaScript" SRC="amlich.js"></SCRIPT>
 </head>
 <BODY marginwidth="0" marginheight="0" topmargin="0" leftmargin="0">
@@ -19,6 +24,25 @@
 	}
 	viewSelectedMonth();
 //-->
+	// Mảng chứa các đường dẫn ảnh nền cho 7 ngày trong tuần
+	const images = [
+		'url(7amlich1.png)',  // Chủ nhật
+		'url(6amlich1.png)',  // Thứ hai
+		'url(5amlich1.png)',  // Thứ ba
+		'url(4amlich1.png)',  // Thứ tư
+		'url(3amlich1.png)',  // Thứ năm
+		'url(2amlich1.png)',  // Thứ sáu
+		'url(1amlich1.png)'   // Thứ bảy
+	];
+	function changeTableBackground() {
+		// Lấy ngày hiện tại (0: Chủ nhật, 1: Thứ hai, ..., 6: Thứ bảy)
+		const currentDay = new Date().getDay();
+
+		// Thay đổi ảnh nền của bảng dựa trên ngày hiện tại
+		document.getElementById('myTable').style.backgroundImage = images[currentDay];
+	}
+	// Gọi hàm để thiết lập ảnh nền ban đầu
+	changeTableBackground();
 </script>
 
 </body>
