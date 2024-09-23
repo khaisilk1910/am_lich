@@ -3,12 +3,12 @@ Hiển thị thông tin âm lịch lên HASS thông qua card Web
 
 Mình lấy nguồn từ https://github.com/dungdoanh/amlich
 
-Mình có làm thêm hiển thị thông tin ngày âm ta html.
+Mình có làm thêm hiển thị thông tin ngày âm ra html. Tự động thay ảnh nền mỗi ngày trong tuần.
 
-![image](https://github.com/user-attachments/assets/d3567550-8c2a-4201-a489-8e1d50346b75)
+![image](https://github.com/user-attachments/assets/3cfad9b9-42ec-4d4b-9763-22c70ca08015)
 
 **Hướng dẫn:**
-1 - Các bạn tải 02 file **amlich.js** và **currentmonth.html** về và lưu 02 file đó vào Hass
+1 - Các bạn tải 02 file **amlich.js** và **currentmonth.html** và 7 file ảnh về và lưu các file đó vào cùng một folder trên Hass
 
 2 - Copy đường dẫn file **currentmonth.html** đã lưu trên Hass
 
