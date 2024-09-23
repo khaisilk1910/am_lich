@@ -533,7 +533,6 @@ function printTable(mm, yy) {
 					res += ('<div style="text-align:center;">Tiết: '+TIETKHI[getSunLongitude(jd+1, 7.0)]+'</div>\n');
 					res += ('</td>\n');
 				res += ('</tr><tr><td class="giohoangdao" colspan="2">Giờ hoàng đạo:<br>'+getGioHoangDao(jd)+'</td></tr>\n');
-				res += ('</tr><tr><td class="giohoangdao" colspan="2">'+CAN[(yy*12+(mm-1)+3) % 10] + " " + CHI[((mm-1)+1)%12]+'</td></tr>\n');
 			res += ('</table>\n');
 		res += ('</td></tr>\n');
 	res += printHead(mm, yy);
