@@ -360,7 +360,7 @@ function getthangam() {
     const todayString = getTodayString();
     var thangam = todayString.split(' ')[7]; // Lấy phần tử đầu tiên trước dấu cách
     //return thangam;
-	var showthangarray = new Array("Tháng Giêng","Tháng Hai","Tháng Ba","Tháng Tư","Tháng Năm","Tháng Sáu","Tháng Bảy","Tháng Tám","Tháng Chín(T)","Tháng Mười","Tháng Mười Một","Tháng Chạp(T)");
+	var showthangarray = new Array("Tháng Giêng (Đ)","Tháng Hai (T)","Tháng Ba (Đ)","Tháng Tư (T)","Tháng Năm (T)","Tháng Sáu (Đ)","Tháng Bảy","Tháng Tám (Đ)","Tháng Chín(T)","Tháng Mười (Đ)","Tháng Mười Một (Đ)","Tháng Chạp(T)");
 	var getthangarray = new Array("1","2","3","4","5","6","7","8","9","10","11","12");
 	var a = thangam;
 	var index = getthangarray.indexOf(a);
@@ -477,17 +477,26 @@ function printSelectedYear() {
 
 function printStyle() {
 	var fontSize = PRINT_OPTS.fontSize;
+	var formatthutrongtuan = getDayOfWeek();
 	var res = "";
 	res += '<style type="text/css">\n';
 	res += '<!--\n';
 	//res += '  body {margin:0}\n';
 	res += '  .tennam {text-align:center; font-size:150%; line-height:120%; font-weight:bold; color:#000000; background-color: #CCCCCC}\n';
-	res += '  .todayduonglich {text-align:center; font-size:480%; line-height:100%; font-weight:bold; color:#000000; background-color: none}\n';
-	res += '  .thangnam {text-align:center; font-size:120%; line-height:160%; font-weight:bold; color:#000000; background-color: #CCFFCC}\n';
-	res += '  .thutrongtuan {text-align:center; font-size:120%; line-height:160%; font-weight:bold; color:#000000; background-color: none}\n';
+	res += '  .thangnam {text-align:center; font-size:120%; line-height:160%; font-weight:bold; color:#000000; background-color: rgba(204, 255, 204, 1)}\n';
+	if (formatthutrongtuan == 'Ch\u1EE7 Nh\u1EADt')
+		res += '  .todayduonglich {text-align:center; font-size:480%; line-height:100%; font-weight:bold; color:rgba(255, 0, 0, 1); background-color: none}\n';
+	else if (formatthutrongtuan == 'Th\u1EE9 B\u1EA3y')
+		res += '  .todayduonglich {text-align:center; font-size:480%; line-height:100%; font-weight:bold; color:rgba(255, 255, 0, 1); background-color: none}\n';
+	else res += '  .todayduonglich {text-align:center; font-size:480%; line-height:100%; font-weight:bold; color:rgba(0, 0, 0, 1); background-color: none}\n';
+	if (formatthutrongtuan == 'Ch\u1EE7 Nh\u1EADt')
+		res += '  .thutrongtuan {text-align:center; font-size:120%; line-height:160%; font-weight:bold; color:rgba(255, 0, 0, 1); background-color: none}\n';
+	else if (formatthutrongtuan == 'Th\u1EE9 B\u1EA3y')
+		res += '  .thutrongtuan {text-align:center; font-size:120%; line-height:160%; font-weight:bold; color:rgba(255, 255, 0, 1); background-color: none}\n';
+	else res += '  .thutrongtuan {text-align:center; font-size:120%; line-height:160%; font-weight:bold; color:rgba(0, 0, 0, 1); background-color: none}\n';
 	res += '  .ngayamlich {text-align:center; font-size:260%; font-weight:bold; color:orange; background-color: none}\n';
-	res += '  .giohoangdao {align:center; color:red; text-align:center; font-size:60%; font-weight:bold; line-height:140%; background-color:none}\n';
-	res += '  .thang {font-size: '+fontSize+'; padding:1; line-height:100%; font-family:Tahoma,Verdana,Arial; table-layout:fixed; background-color: rgba(0,0,0,0); }\n';
+	res += '  .giohoangdao {align:center; color:red; text-align:center; font-size:60%; font-weight:bold; line-height:140%; background-color: rgba(0, 0, 255, 0.5);}\n';
+	res += '  .thang {font-size: '+fontSize+'; padding:1; line-height:100%; font-family:Tahoma,Verdana,Arial; table-layout:fixed; background-color: rgba(0,0,0,0); background-image: linear-gradient(157deg, rgba(246,220,131,1) 0%, rgba(247,139,243,1) 100%);}\n';
 	res += '  .tenthang {text-align:center; font-size:125%; line-height:100%; font-weight:bold; color:#330033; background-color: #CCFFCC}\n';
 	res += '  .navi-l {text-align:center; font-size:75%; line-height:100%; font-family:Verdana,Times New Roman,Arial; font-weight:bold; color:red; background-color: #CCFFCC}\n';
 	res += '  .navi-r {text-align:center; font-size:75%; line-height:100%; font-family:Verdana,Arial,Times New Roman; font-weight:bold; color:#330033; background-color: #CCFFCC}\n';
@@ -516,23 +525,29 @@ function printTable(mm, yy) {
 	var MonthHead = mm + "/" + yy;
 	var LunarHead = getYearCanChi(ld1.year);
 	var res = "";
-	res += ('<table class="thang" border="2" cellpadding="1" cellspacing="1" height="100%" width="'+PRINT_OPTS.tableWidth+'">\n');
-		res += ('<tr><td colspan="7">\n');
-			res += ('<table align="center" height="100%" width="100%" border="0" cellpadding="1" cellspacing="1">\n');
-				res += ('<tr><td class="thangnam" colspan="2">Tháng '+mm+' năm '+yy+'</td></tr>\n');
-				res += ('<tr><td class="todayduonglich" style="text-align:center;" colspan="2">'+today.getDate()+'</td></tr>\n');
-				res += ('<tr><td class="thutrongtuan" colspan="2"><div style="margin-left:auto; margin-right:auto; width:30%; background-color:#CCFFCC;">'+getDayOfWeek()+'</div></td></tr>\n');
-				res += ('<tr><td width="50%">\n');
+	res += ('<table class="thang" border="0" cellpadding="1" cellspacing="2" height="100%" width="'+PRINT_OPTS.tableWidth+'">\n');
+		res += ('<tr border="0"><td colspan="7" border="0">\n');
+			res += ('<table align="center" height="100%" width="100%" border="0" cellpadding="0" cellspacing="0" >\n');
+				res += ('<tr width="100%"><td width="100%" style="border-top-left-radius:10px; border-top-right-radius:10px;" class="thangnam" colspan="5">Tháng '+mm+' năm '+yy+'</td></tr>\n');
+				res += ('<tr><td class="todayduonglich" style="text-align:center;" colspan="5">'+today.getDate()+'</td></tr>\n');
+				res += ('<tr><td class="thutrongtuan" colspan="5"><div style="margin-left:auto; margin-right:auto; width:30%; border-radius:6px; background-color:#CCFFCC;">'+getDayOfWeek()+'</div></td></tr>\n');
+				res += ('<tr><td width="34%" colspan="2">\n');
 					res += ('<div style="text-align:center;">'+getthangam()+'</div>\n');
 					res += ('<div class="ngayamlich">'+getngayam()+'</div>\n');
 					res += ('<div style="text-align:center;">Năm '+getYearCanChi(yy)+'</div>\n');
-				res += ('</td><td width="50%">\n');
-					res += ('<div style="text-align:center;"> Tháng: '+CAN[(yy*12+(mm-1)+3) % 10] + " " + CHI[((mm-1)+1)%12]+'</div>\n');
-					res += ('<div style="text-align:center;">Ngày: '+CAN[(jd + 9) % 10] + " " + CHI[(jd+1)%12]+'</div>\n');
-					res += ('<div style="text-align:center;">Giờ : '+getCanHour0(jd)+' '+CHI[0]+'</div>\n');
-					res += ('<div style="text-align:center;">Tiết: '+TIETKHI[getSunLongitude(jd+1, 7.0)]+'</div>\n');
+				res += ('<td>');
+				if (getngayam() == 1)
+					res += 	('<div style="text-align:center; margin-left:auto; margin-right:auto; font-size:120%; font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;">Mùng Một</div>');
+				else if (getngayam() == 15)
+					res += 	('<div style="text-align:center; margin-left:auto; margin-right:auto; font-size:120%; font-weight:bold; color:rgba(255, 255, 0, 1); background-color:none;">Ngày Rằm</div>');
+				res += ('</td>\n');
+				res += ('</td><td width="34%" colspan="2">\n');
+					res += ('<div style="text-align:right; margin-right:15px;"> Tháng: '+CAN[(yy*12+(mm-1)+3) % 10] + " " + CHI[((mm-1)+1)%12]+'</div>\n');
+					res += ('<div style="text-align:right; margin-right:15px;">Ngày: '+CAN[(jd + 9) % 10] + " " + CHI[(jd+1)%12]+'</div>\n');
+					res += ('<div style="text-align:right; margin-right:15px;">Giờ : '+getCanHour0(jd)+' '+CHI[0]+'</div>\n');
+					res += ('<div style="text-align:right; margin-right:15px;">Tiết: '+TIETKHI[getSunLongitude(jd+1, 7.0)]+'</div>\n');
 					res += ('</td>\n');
-				res += ('</tr><tr><td class="giohoangdao" colspan="2">Giờ hoàng đạo:<br>'+getGioHoangDao(jd)+'</td></tr>\n');
+				res += ('</tr><tr><td class="giohoangdao" colspan="5">Giờ hoàng đạo:<br>'+getGioHoangDao(jd)+'</td></tr>\n');
 			res += ('</table>\n');
 		res += ('</td></tr>\n');
 	res += printHead(mm, yy);
