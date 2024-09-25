@@ -483,20 +483,21 @@ function printStyle() {
 	res += '<!--\n';
 	//res += '  body {margin:0}\n';
 	res += '  .tennam {text-align:center; font-size:150%; line-height:120%; font-weight:bold; color:#000000; background-color: #CCCCCC}\n';
-	res += '  .thangnam {text-align:center; font-size:120%; line-height:120%; font-weight:bold; color:#000000; background-color: rgba(204, 255, 204, 0.8)}\n';
-	res += '  .ThangNgayGioTiet {text-align:right; font-size:70%; color:#000000; background-color:none;}\n';
+	res += '  .thangnam {text-align:center; font-size:120%; line-height:120%; font-weight:bold; color:#000000; background-color: rgba(204, 255, 204, 0.5)}\n';
+	res += '  .ThangNgayGioTiet {text-align:right; font-size:70%; color:#000000; font-weight:bold;  background-color:none;}\n';
+	res += '  .ThangNgayGioTiet1 {text-align:right; font-size:100%; color:rgba(0, 0, 255, 1); font-weight:bold;  background-color:none;}\n';
 	if (formatthutrongtuan == 'Ch\u1EE7 Nh\u1EADt')
-		res += '  .todayduonglich {text-align:center; font-size:480%; line-height:100%; font-weight:bold; color:rgba(255, 0, 0, 1); background-color: none}\n';
+		res += '  .todayduonglich {text-align:center; font-size:480%; line-height:100%; font-weight:bold; color:rgba(255, 0, 0, 1); text-shadow: -3px 0 blue, 0 3px blue, 3px 0 blue, 0 -3px blue; background-color: none}\n';
 	else if (formatthutrongtuan == 'Th\u1EE9 B\u1EA3y')
-		res += '  .todayduonglich {text-align:center; font-size:480%; line-height:100%; font-weight:bold; color:rgba(255, 255, 0, 1); background-color: none}\n';
-	else res += '  .todayduonglich {text-align:center; font-size:480%; line-height:100%; font-weight:bold; color:rgba(0, 0, 0, 1); background-color: none}\n';
+		res += '  .todayduonglich {text-align:center; font-size:480%; line-height:100%; font-weight:bold; color:rgba(255, 255, 0, 1); text-shadow: -3px 0 blue, 0 3px blue, 3px 0 blue, 0 -3px blue; background-color: none}\n';
+	else res += '  .todayduonglich {text-align:center; font-size:480%; line-height:100%; font-weight:bold; color:rgba(255, 255, 0, 1); text-shadow: -3px 0 blue, 0 3px blue, 3px 0 blue, 0 -3px blue; background-color: none}\n';
 	if (formatthutrongtuan == 'Ch\u1EE7 Nh\u1EADt')
 		res += '  .thutrongtuan {text-align:center; font-size:120%; line-height:160%; font-weight:bold; color:rgba(255, 0, 0, 1); background-color: none}\n';
 	else if (formatthutrongtuan == 'Th\u1EE9 B\u1EA3y')
 		res += '  .thutrongtuan {text-align:center; font-size:120%; line-height:160%; font-weight:bold; color:rgba(255, 255, 0, 1); background-color: none}\n';
 	else res += '  .thutrongtuan {text-align:center; font-size:120%; line-height:160%; font-weight:bold; color:rgba(0, 0, 0, 1); background-color: none}\n';
-	res += '  .ngayamlich {text-align:center; font-size:260%; font-weight:bold; color:rgba(0, 0, 255, 1); background-color: none}\n';
-	res += '  .giohoangdao {align:center; color:red; text-align:center; font-size:60%; font-weight:bold; line-height:140%; background-color: rgba(0, 0, 255, 0.5);}\n';
+	res += '  .ngayamlich {text-align:center; font-size:260%; font-weight:bold; color:rgba(0, 0, 255, 1); text-shadow: -2px 0 yellow, 0 2px yellow, 2px 0 yellow, 0 -2px yellow; background-color: none}\n';
+	res += '  .giohoangdao {align:center; color:rgba(255, 255, 255, 1); text-align:center; font-size:60%; font-weight:bold; line-height:140%; background-color: rgba(0, 0, 255, 0.4);}\n';
 	res += '  .thang {font-size: '+fontSize+'; padding:1; line-height:100%; font-family:Tahoma,Verdana,Arial; table-layout:fixed; background-color: rgba(0,0,0,0); background-position: center top; background-repeat: no-repeat; background-size: cover; transition: background-image 1s ease-in-out;}\n';
 	res += '  .tenthang {text-align:center; font-size:125%; line-height:100%; font-weight:bold; color:#330033; background-color: #CCFFCC}\n';
 	res += '  .navi-l {text-align:center; font-size:75%; line-height:100%; font-family:Verdana,Times New Roman,Arial; font-weight:bold; color:red; background-color: #CCFFCC}\n';
@@ -532,7 +533,7 @@ function printTable(mm, yy) {
 		res += ('<tr border="0"><td colspan="7" border="0">\n');
 			res += ('<table align="center" height="100%" width="100%" border="0" cellpadding="0" cellspacing="0" >\n');
 				res += ('<tr><td class="todayduonglich" style="text-align:center;" colspan="5">'+today.getDate()+'</td></tr>\n');
-				res += ('<tr><td class="thutrongtuan" colspan="5"><div style="margin-left:auto; margin-right:auto; width:30%; border-radius:6px; background-color:rgba(204, 255, 204, 0.8);">'+getDayOfWeek()+'</div></td></tr>\n');
+				res += ('<tr><td class="thutrongtuan" colspan="5"><div style="margin-left:auto; margin-right:auto; width:30%; border-radius:6px; background-color:rgba(204, 255, 204, 0.5);">'+getDayOfWeek()+'</div></td></tr>\n');
 				res += ('<tr><td width="34%" colspan="2">\n');
 					res += ('<div style="text-align:center;">'+getthangam()+'</div>\n');
 					res += ('<div class="ngayamlich">'+getngayam()+'</div>\n');
@@ -544,10 +545,10 @@ function printTable(mm, yy) {
 					res += 	('<div style="text-align:center; margin-left:auto; margin-right:auto; font-size:120%; font-weight:bold; color:rgba(255, 255, 0, 1); background-color:none;">Ngày Rằm</div>');
 				res += ('</td>\n');
 				res += ('</td><td width="34%" colspan="2">\n');
-					res += ('<div style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Tháng: </i>'+CAN[(yy*12+(mm-1)+3) % 10] + " " + CHI[((mm-1)+1)%12]+'</div>\n');
-					res += ('<div style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Ngày: </i>'+CAN[(jd + 9) % 10] + " " + CHI[(jd+1)%12]+'</div>\n');
-					res += ('<div style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Giờ : </i>'+getCanHour0(jd)+' '+CHI[0]+'</div>\n');
-					res += ('<div style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Tiết: </i>'+TIETKHI[getSunLongitude(jd+1, 7.0)]+'</div>\n');
+					res += ('<div class="ThangNgayGioTiet1" style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Tháng: </i>'+CAN[(yy*12+(mm-1)+3) % 10] + " " + CHI[((mm-1)+1)%12]+'</div>\n');
+					res += ('<div class="ThangNgayGioTiet1"  style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Ngày: </i>'+CAN[(jd + 9) % 10] + " " + CHI[(jd+1)%12]+'</div>\n');
+					res += ('<div class="ThangNgayGioTiet1"  style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Giờ : </i>'+getCanHour0(jd)+' '+CHI[0]+'</div>\n');
+					res += ('<div class="ThangNgayGioTiet1"  style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Tiết: </i>'+TIETKHI[getSunLongitude(jd+1, 7.0)]+'</div>\n');
 					res += ('</td>\n');
 				res += ('</tr><tr><td class="giohoangdao" colspan="5">Giờ hoàng đạo:<br>'+getGioHoangDao(jd)+'</td></tr>\n');
 			res += ('</table>\n');
