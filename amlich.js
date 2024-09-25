@@ -3,6 +3,9 @@
  * Permission to use, copy, modify, and redistribute this software and its
  * documentation for personal, non-commercial use is hereby granted provided that
  * this copyright notice appears in all copies.
+ * Mình tạo thêm Bảng hiển thị ra thông tin lịch âm từ dữ liệu của tác giả.
+ * khaisilk1910.
+ * https://github.com/khaisilk1910/am_lich.
  */
 
 var ABOUT = "\u00C2m l\u1ECBch Vi\u1EC7t Nam - Version 0.8"+"\n\u00A9 2004 H\u1ED3 Ng\u1ECDc \u0110\u1EE9c";
