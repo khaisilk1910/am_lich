@@ -3,12 +3,9 @@
  * Permission to use, copy, modify, and redistribute this software and its
  * documentation for personal, non-commercial use is hereby granted provided that
  * this copyright notice appears in all copies.
- * Mình tạo thêm Bảng hiển thị ra thông tin lịch âm từ dữ liệu của tác giả.
- * khaisilk1910.
- * https://github.com/khaisilk1910/am_lich.
  */
 
-var ABOUT = "\u00C2m l\u1ECBch Vi\u1EC7t Nam";
+var ABOUT = "\u00C2m l\u1ECBch Vi\u1EC7t Nam - Version 0.8"+"\n\u00A9 2004 H\u1ED3 Ng\u1ECDc \u0110\u1EE9c";
 var TK19 = new Array(
 	0x30baa3, 0x56ab50, 0x422ba0, 0x2cab61, 0x52a370, 0x3c51e8, 0x60d160, 0x4ae4b0, 0x376926, 0x58daa0,
 	0x445b50, 0x3116d2, 0x562ae0, 0x3ea2e0, 0x28e2d2, 0x4ec950, 0x38d556, 0x5cb520, 0x46b690, 0x325da4,
@@ -487,8 +484,8 @@ function printStyle() {
 	//res += '  body {margin:0}\n';
 	res += '  .tennam {text-align:center; font-size:150%; line-height:120%; font-weight:bold; color:#000000; background-color: #CCCCCC}\n';
 	res += '  .thangnam {text-align:center; font-size:120%; line-height:120%; font-weight:bold; color:#000000; background-color: rgba(204, 255, 204, 0.5)}\n';
-	res += '  .ThangNgayGioTiet {text-align:right; font-size:70%; color:#000000; font-weight:bold;  background-color:none;}\n';
-	res += '  .ThangNgayGioTiet1 {text-align:right; font-size:100%; color:rgba(0, 0, 255, 1); font-weight:bold;  background-color:none;}\n';
+	res += '  .ThangNgayGioTiet {text-align:right; font-size:70%; text-shadow:none; color:#000000; font-weight:bold;  background-color:none;}\n';
+	res += '  .ThangNgayGioTiet1 {text-align:right; font-size:100%; text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow; color:rgba(0, 0, 255, 1); font-weight:bold;  background-color:none;}\n';
 	if (formatthutrongtuan == 'Ch\u1EE7 Nh\u1EADt')
 		res += '  .todayduonglich {text-align:center; font-size:480%; line-height:100%; font-weight:bold; color:rgba(255, 0, 0, 1); text-shadow: -3px 0 blue, 0 3px blue, 3px 0 blue, 0 -3px blue; background-color: none}\n';
 	else if (formatthutrongtuan == 'Th\u1EE9 B\u1EA3y')
