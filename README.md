@@ -9,7 +9,8 @@ Mình có làm thêm hiển thị thông tin ngày âm ra html.
  - Đổi màu Thứ và Ngày Dương vào Thứ 7 và Chủ Nhật
  - Hiển thị thêm Ngày Mùng 1 và Ngày Rằm hàng tháng
 
-![image](https://github.com/user-attachments/assets/3cfad9b9-42ec-4d4b-9763-22c70ca08015)
+![image](https://github.com/user-attachments/assets/c4455ab0-3e93-45dc-a805-4d77fe421848)
+
 
 **Hướng dẫn:**
 1 - Các bạn tải 02 file **amlich.js** và **currentmonth.html** và 7 file ảnh về và lưu các file đó vào cùng một folder trên Hass
