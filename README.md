@@ -9,7 +9,7 @@ Mình có làm thêm hiển thị thông tin ngày âm ra html.
  - Đổi màu Thứ và Ngày Dương vào Thứ 7 và Chủ Nhật
  - Hiển thị thêm Ngày Mùng 1 và Ngày Rằm hàng tháng
 
-![image](https://github.com/user-attachments/assets/c4455ab0-3e93-45dc-a805-4d77fe421848)
+![image](https://github.com/user-attachments/assets/deadc722-af0b-48a7-848f-6c9bfa9d24e1)
 
 
 **Hướng dẫn:**
