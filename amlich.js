@@ -228,7 +228,7 @@ function getSunLongitude(dayNumber, timeZone) {
 }
 
 var today = new Date();
-//var currentLunarYear = getYearInfo(today.getFullYear());
+var currentLunarYear = getYearInfo(today.getFullYear());
 var currentLunarDate = getLunarDate(today.getDate(), today.getMonth()+1, today.getFullYear());
 var currentMonth = today.getMonth()+1;
 var currentYear = today.getFullYear();
@@ -346,44 +346,97 @@ function getTodayString() {
 	return s;
 }
 
-function getDayOfWeek() {
-    const todayString = getTodayString();
-    const dayOfWeek = todayString.split(' ')[0] + ' ' + todayString.split(' ')[1]; // Lấy phần tử đầu tiên trước dấu cách
-    return dayOfWeek;
+
+//Lấy thứ trong tuần hôm nay
+function getDayOfWeekString(lunar, solarDay, solarMonth, solarYear) {
+	var s1;
+	s1 = TUAN[(lunar.jd + 1) % 7];
+	return s1;
 }
-function getngayam() {
-    const todayString = getTodayString();
-    const ngayam = todayString.split(' ')[5]; // Lấy phần tử đầu tiên trước dấu cách
-    return ngayam;
+function getNowDayOfWeekString() {
+	var s1 = getDayOfWeekString(currentLunarDate, today.getDate(), today.getMonth()+1, today.getFullYear());
+	return s1;
 }
-function getthangam() {
-    const todayString = getTodayString();
-    var thangam = todayString.split(' ')[7]; // Lấy phần tử đầu tiên trước dấu cách
-    //return thangam;
-	var showthangarray = new Array("Tháng Giêng (Đ)","Tháng Hai (T)","Tháng Ba (Đ)","Tháng Tư (T)","Tháng Năm (T)","Tháng Sáu (Đ)","Tháng Bảy","Tháng Tám (Đ)","Tháng Chín(T)","Tháng Mười (Đ)","Tháng Mười Một (Đ)","Tháng Chạp(T)");
-	var getthangarray = new Array("1","2","3","4","5","6","7","8","9","10","11","12");
-	var a = thangam;
-	var index = getthangarray.indexOf(a);
+//Lấy ngày dương hôm nay
+function getDaySolarString(lunar, solarDay, solarMonth, solarYear) {
+	var s1;
+	s1 = solarDay;
+	return s1;
+}
+function getNowDaySolarString() {
+	var s1 = getDaySolarString(currentLunarDate, today.getDate(), today.getMonth()+1, today.getFullYear());
+	return s1;
+}
+//Lấy tháng dương hôm nay
+function getsolarMonthString(lunar, solarDay, solarMonth, solarYear) {
+	var s1;
+	s1 = solarMonth;
+	return s1;
+}
+function getNowsolarMonthString() {
+	var s1 = getsolarMonthString(currentLunarDate, today.getDate(), today.getMonth()+1, today.getFullYear());
+	return s1;
+}
+//Lấy ngày Âm hôm nay
+function getNowLunarDayString(lunar, solarDay, solarMonth, solarYear) {
+	var s;
+	s = lunar.day;
+	return s;
+}
+function getTodayLunarString() {
+	var s = getNowLunarDayString(currentLunarDate, today.getDate(), today.getMonth()+1, today.getFullYear());
+	return s;
+}
+//Lấy tháng Âm (số) hôm nay
+function getNowLunarMonthInt(lunar, solarDay, solarMonth, solarYear) {
+	var s;
+	s = lunar.month;
+	return s;
+}
+function getTodayMonthLunarInt() {
+	var s = getNowLunarMonthInt(currentLunarDate, today.getDate(), today.getMonth()+1, today.getFullYear());
+	return s;
+}
+//Lấy tháng Âm(chữ) hôm nay
+function getNowMonthLunarString(lunar, solarDay, solarMonth, solarYear) {
+	var s;
+	var showthangarray = new Array("Tháng Giêng","Tháng Hai","Tháng Ba","Tháng Tư","Tháng Năm","Tháng Sáu","Tháng Bảy","Tháng Tám","Tháng Chín","Tháng Mười","Tháng Mười Một","Tháng Chạp");
+	var getthangarray = new Array(1,2,3,4,5,6,7,8,9,10,11,12);
+	var index = getthangarray.indexOf(lunar.month);
 	if (index !== -1) {
 		var showthangAmLich = showthangarray[index];
-		return showthangAmLich;
+		s = showthangAmLich;
+		if (lunar.leap == 1) {
+			s = s + " nhuận";
+		}
+		return s;
 	} else {
 		return "Không tìm thấy tháng";
 	}
 }
-
-function getthangamcanchi() {
-    const todayString = getTodayString();
-    var thangamcanchi = todayString.split(' ')[7]; // Lấy phần tử đầu tiên trước dấu cách
-    return thangamcanchi;
+function getNowMonthStringLunar() {
+	var s = getNowMonthLunarString(currentLunarDate, today.getDate(), today.getMonth()+1, today.getFullYear());
+	return s;
+}
+//Lấy năm Âm Can Chi hôm nay
+function getLunarYearString(lunar, solarDay, solarMonth, solarYear) {
+	var s1;
+	s1 = lunar.year;
+	return s1;
+}
+function getNowLunarYearString() {
+	var s1 = getLunarYearString(currentLunarDate, today.getDate(), today.getMonth()+1, today.getFullYear());
+	var s2 = getYearCanChi(s1)
+	return s2;
 }
 
-function getCanChiMonth(month) {
-    // Tính Can và Chi cho tháng âm lịch
-    var canMonth = CAN[(month - 1) % 10]; // Can theo chu kỳ 10 tháng
-    var chiMonth = CHI[(month - 1) % 12]; // Chi theo chu kỳ 12 tháng
-    return "Tháng: " + canMonth + " " + chiMonth;
+//Lấy tháng Âm Can Chi hôm nay
+function getNowLunarMonthCanChi() {
+	var s2 = getLunarYearString(currentLunarDate, today.getDate(), today.getMonth()+1, today.getFullYear());
+	var s1 = CAN[(s2*12+(getTodayMonthLunarInt())+3) % 10] + " " + CHI[((getTodayMonthLunarInt())+1)%12];
+	return s1;
 }
+
 
 
 function getCurrentTime() {
@@ -477,7 +530,7 @@ function printSelectedYear() {
 
 function printStyle() {
 	var fontSize = PRINT_OPTS.fontSize;
-	var formatthutrongtuan = getDayOfWeek();
+	var formatthutrongtuan = getNowDayOfWeekString();
 	var res = "";
 	res += '<style type="text/css">\n';
 	res += '<!--\n';
@@ -520,7 +573,6 @@ function printStyle() {
 function printTable(mm, yy) {
 	var i, j, k, solar, lunar, cellClass, solarClass, lunarClass;
 	var jd = jdn(today.getDate(), mm, yy);
-	//var thangamINT = int getthangamcanchi();
 	var currentMonth = getMonth(mm, yy);
 	if (currentMonth.length == 0) return;
 	var ld1 = currentMonth[0];
@@ -529,23 +581,23 @@ function printTable(mm, yy) {
 	var LunarHead = getYearCanChi(ld1.year);
 	var res = "";
 	res += ('<table id="myTable" class="thang" border="0" cellpadding="1" cellspacing="2" height="100%" width="'+PRINT_OPTS.tableWidth+'">\n');
-		res += ('<tr border="0"><td colspan="7" class="thangnam" border="0" style="border-top-left-radius:10px; border-top-right-radius:10px;">Tháng '+mm+' năm '+yy+'</td></tr>\n');
+		res += ('<tr border="0"><td colspan="7" class="thangnam" border="0" style="border-top-left-radius:10px; border-top-right-radius:10px;">Tháng '+getNowsolarMonthString()+' năm '+yy+'</td></tr>\n');
 		res += ('<tr border="0"><td colspan="7" border="0">\n');
 			res += ('<table align="center" height="100%" width="100%" border="0" cellpadding="0" cellspacing="0" >\n');
-				res += ('<tr><td class="todayduonglich" style="text-align:center;" colspan="5">'+today.getDate()+'</td></tr>\n');
-				res += ('<tr><td class="thutrongtuan" colspan="5"><div style="margin-left:auto; margin-right:auto; width:30%; border-radius:6px; background-color:rgba(204, 255, 204, 0.5);">'+getDayOfWeek()+'</div></td></tr>\n');
+				res += ('<tr><td class="todayduonglich" style="text-align:center;" colspan="5">'+getNowDaySolarString()+'</td></tr>\n');
+				res += ('<tr><td class="thutrongtuan" colspan="5"><div style="margin-left:auto; margin-right:auto; width:30%; border-radius:6px; background-color:rgba(204, 255, 204, 0.5);">'+getNowDayOfWeekString()+'</div></td></tr>\n');
 				res += ('<tr><td width="34%" colspan="2">\n');
-					res += ('<div style="text-align:center;">'+getthangam()+'</div>\n');
-					res += ('<div class="ngayamlich">'+getngayam()+'</div>\n');
-					res += ('<div style="text-align:center;">'+getYearCanChi(yy)+'</div>\n');
+					res += ('<div style="text-align:center;"><b>'+getNowMonthStringLunar()+'</b></div>\n');
+					res += ('<div class="ngayamlich">'+getTodayLunarString()+'</div>\n');
+					res += ('<div style="text-align:center;"><b>'+getNowLunarYearString()+'</b></div>\n');
 				res += ('<td>');
-				if (getngayam() == 1)
+				if (getTodayLunarString() == 1)
 					res += 	('<div style="text-align:center; margin-left:auto; margin-right:auto; font-size:120%; font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;">Mùng Một</div>');
-				else if (getngayam() == 15)
+				else if (getTodayLunarString() == 15)
 					res += 	('<div style="text-align:center; margin-left:auto; margin-right:auto; font-size:120%; font-weight:bold; color:rgba(255, 255, 0, 1); background-color:none;">Ngày Rằm</div>');
 				res += ('</td>\n');
 				res += ('</td><td width="34%" colspan="2">\n');
-					res += ('<div class="ThangNgayGioTiet1" style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Tháng: </i>'+CAN[(yy*12+(mm-1)+3) % 10] + " " + CHI[((mm-1)+1)%12]+'</div>\n');
+					res += ('<div class="ThangNgayGioTiet1" style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Tháng: </i>'+getNowLunarMonthCanChi()+'</div>\n');
 					res += ('<div class="ThangNgayGioTiet1"  style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Ngày: </i>'+CAN[(jd + 9) % 10] + " " + CHI[(jd+1)%12]+'</div>\n');
 					res += ('<div class="ThangNgayGioTiet1"  style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Giờ : </i>'+getCanHour0(jd)+' '+CHI[0]+'</div>\n');
 					res += ('<div class="ThangNgayGioTiet1"  style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Tiết: </i>'+TIETKHI[getSunLongitude(jd+1, 7.0)]+'</div>\n');
