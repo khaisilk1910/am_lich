@@ -67,6 +67,10 @@ var TIETKHI = new Array("Xu\u00E2n Ph\u00E2n", "Thanh Minh", "C\u1ED1c V\u0169",
 	"Thu Ph\u00E2n", "H\u00E0n l\u1ED9", "S\u01B0\u01A1ng Gi\u00E1ng", "L\u1EADp \u0111\u00F4ng", "Ti\u1EC3u Tuy\u1EBFt", "\u0110\u1EA1i Tuy\u1EBFt",
 	"\u0110\u00F4ng Ch\u00ED", "Ti\u1EC3u H\u00E0n", "\u0110\u1EA1i H\u00E0n", "L\u1EADp Xu\u00E2n", "V\u0169 Th\u1EE7y", "Kinh Tr\u1EADp"
 );
+var NGAY_LE_DL = new Array("1/1","9/1","3/2","14/2","27/2","8/3","20/3","22/3","26/3","31/3","1/4","30/4","1/5","7/5","12/5","19/5","1/6","18/6","21/6","28/6","11/7","27/7","28/7","19/8","2/9","10/9","1/10","10/10","13/10","20/10","31/10","9/11","19/11","20/11","23/11","28/11","29/11","1/12","19/12","25/12","22/12");
+var NGAY_LE_DL_STRING = new Array("Tết Dương lịch","Ngày truyền thống học sinh, sinh viên Việt Nam","Ngày thành lập Đảng Cộng Sản Việt Nam","Lễ tình nhân","Ngày thầy thuốc Việt Nam","Ngày Quốc tế Phụ nữ","Ngày Quốc tế Hạnh phúc","Ngày Nước sạch Thế giới","Ngày thành lập Đoàn TNCS Hồ Chí Minh","Ngày Lễ Phục Sinh","Ngày Cá tháng Tư","Ngày giải phóng miền Nam","Ngày Quốc tế Lao động","Ngày chiến thắng Điện Biên Phủ","Ngày của mẹ","Ngày sinh Chủ tịch Hồ Chí Minh","Ngày Quốc tế thiếu nhi","Ngày của cha","Ngày báo chí Việt Nam","Ngày gia đình Việt Nam","Ngày dân số thế giới","Ngày Thương binh liệt sĩ","Ngày thành lập công đoàn Việt Nam","Ngày kỷ niệm Cách mạng Tháng 8 thành công","Ngày Quốc Khánh","Ngày thành lập Mặt trận Tổ quốc Việt Nam","Ngày quốc tế người cao tuổi","Ngày giải phóng thủ đô","Ngày doanh nhân Việt Nam","Ngày Phụ nữ Việt Nam","Ngày Halloween","Ngày pháp luật Việt Nam","Ngày Quốc tế Nam giới","Ngày Nhà giáo Việt Nam","Ngày thành lập Hội chữ thập đỏ Việt Nam","Lễ Tạ Ơn","Black Friday","Ngày thế giới phòng chống AIDS","Ngày toàn quốc kháng chiến","Ngày lễ Giáng sinh","Ngày thành lập quân đội nhân dân Việt Nam");
+var NGAY_LE_AL = new Array("1/1","15/1","3/3","10/3","15/4","5/5","7/7","15/7","15/8","9/9","10/10","15/10","23/12");
+var NGAY_LE_AL_STRING = new Array("Tết Nguyên Đán","Tết Nguyên Tiêu","Tết Hàn Thực, Tiết Thanh Minh","Giỗ tổ Hùng Vương","Lễ Phật Đản","Tết Đoan Ngọ","Lễ Thất Tịch","Lễ Vu Lan","Tết Trung Thu","Tết Trùng Cửu","Tết Trùng Thập","Tết Hạ Nguyên","Ông Táo Về Trời");
 
 /* Create lunar date object, stores (lunar) date, month, year, leap month indicator, and Julian date number */
 function LunarDate(dd, mm, yy, leap, jd) {
@@ -436,6 +440,35 @@ function getNowLunarMonthCanChi() {
 	var s1 = CAN[(s2*12+(getTodayMonthLunarInt())+3) % 10] + " " + CHI[((getTodayMonthLunarInt())+1)%12];
 	return s1;
 }
+//Lấy thông tin các ngày lễ Dương Lịch trong năm
+function getLeTetDuongLichInfor() {
+	var s;
+	var d_m = getNowDaySolarString()+"/"+getNowsolarMonthString();
+	var index = NGAY_LE_DL.indexOf(d_m);
+	if (index !== -1) {
+		var showLeTetDuongLichInfor = NGAY_LE_DL_STRING[index];
+		s = showLeTetDuongLichInfor;
+		return s;
+	} else {
+		return " ";
+	}
+}
+//Lấy thông tin các ngày lễ Âm Lịch trong năm
+function getLeTetAmLichInfor() {
+	var s;
+	var d_m = getTodayLunarString()+"/"+getTodayMonthLunarInt();
+	var index = NGAY_LE_AL.indexOf(d_m);
+	if (index !== -1) {
+		var showLeTetAmLichInfor = NGAY_LE_AL_STRING[index];
+		s = showLeTetAmLichInfor;
+		return s;
+	} else {
+		return " ";
+	}
+}
+
+
+
 
 
 
@@ -595,6 +628,7 @@ function printTable(mm, yy) {
 					res += 	('<div style="text-align:center; margin-left:auto; margin-right:auto; font-size:120%; font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;">Mùng Một</div>');
 				else if (getTodayLunarString() == 15)
 					res += 	('<div style="text-align:center; margin-left:auto; margin-right:auto; font-size:120%; font-weight:bold; color:rgba(255, 255, 0, 1); background-color:none;">Ngày Rằm</div>');
+				res += ('<div style="text-align:center; margin-left:auto; margin-right:auto; font-size:120%; font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;">'+getLeTetDuongLichInfor() +'<br>'+getLeTetAmLichInfor()+'</div>');
 				res += ('</td>\n');
 				res += ('</td><td width="34%" colspan="2">\n');
 					res += ('<div class="ThangNgayGioTiet1" style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Tháng: </i>'+getNowLunarMonthCanChi()+'</div>\n');
