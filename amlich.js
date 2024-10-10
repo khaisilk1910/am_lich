@@ -68,7 +68,7 @@ var TIETKHI = new Array("Xu\u00E2n Ph\u00E2n", "Thanh Minh", "C\u1ED1c V\u0169",
 	"\u0110\u00F4ng Ch\u00ED", "Ti\u1EC3u H\u00E0n", "\u0110\u1EA1i H\u00E0n", "L\u1EADp Xu\u00E2n", "V\u0169 Th\u1EE7y", "Kinh Tr\u1EADp"
 );
 var NGAY_LE_DL = new Array("1/1","9/1","3/2","14/2","27/2","8/3","20/3","22/3","26/3","31/3","1/4","30/4","1/5","7/5","12/5","19/5","1/6","18/6","21/6","28/6","11/7","27/7","28/7","19/8","2/9","10/9","1/10","10/10","13/10","20/10","31/10","9/11","19/11","20/11","23/11","28/11","29/11","1/12","19/12","25/12","22/12");
-var NGAY_LE_DL_STRING = new Array("Tết Dương lịch","Ngày truyền thống học sinh, sinh viên Việt Nam","Ngày thành lập Đảng Cộng Sản Việt Nam","Lễ tình nhân","Ngày thầy thuốc Việt Nam","Ngày Quốc tế Phụ nữ","Ngày Quốc tế Hạnh phúc","Ngày Nước sạch Thế giới","Ngày thành lập Đoàn TNCS Hồ Chí Minh","Ngày Lễ Phục Sinh","Ngày Cá tháng Tư","Ngày giải phóng miền Nam","Ngày Quốc tế Lao động","Ngày chiến thắng Điện Biên Phủ","Ngày của mẹ","Ngày sinh Chủ tịch Hồ Chí Minh","Ngày Quốc tế thiếu nhi","Ngày của cha","Ngày báo chí Việt Nam","Ngày gia đình Việt Nam","Ngày dân số thế giới","Ngày Thương binh liệt sĩ","Ngày thành lập công đoàn Việt Nam","Ngày kỷ niệm Cách mạng Tháng 8 thành công","Ngày Quốc Khánh","Ngày thành lập Mặt trận Tổ quốc Việt Nam","Ngày quốc tế người cao tuổi","Ngày giải phóng thủ đô","Ngày doanh nhân Việt Nam","Ngày Phụ nữ Việt Nam","Ngày Halloween","Ngày pháp luật Việt Nam","Ngày Quốc tế Nam giới","Ngày Nhà giáo Việt Nam","Ngày thành lập Hội chữ thập đỏ Việt Nam","Lễ Tạ Ơn","Black Friday","Ngày thế giới phòng chống AIDS","Ngày toàn quốc kháng chiến","Ngày lễ Giáng sinh","Ngày thành lập quân đội nhân dân Việt Nam");
+var NGAY_LE_DL_STRING = new Array("Tết Dương lịch","Truyền thống học sinh, sinh viên Việt Nam","Thành lập Đảng Cộng Sản Việt Nam","Lễ tình nhân","Thầy thuốc Việt Nam","Quốc tế Phụ nữ","Quốc tế Hạnh phúc","Nước sạch Thế giới","Thành lập Đoàn TNCS Hồ Chí Minh","Lễ Phục Sinh","Cá tháng Tư","Giải phóng Miền Nam","Quốc tế Lao động","Chiến thắng Điện Biên Phủ","Ngày của Mẹ","Ngày sinh Chủ tịch Hồ Chí Minh","Quốc tế Thiếu Nhi","Ngày của Cha","Báo chí Việt Nam","Gia đình Việt Nam","Dân số thế giới","Thương binh liệt sĩ","Thành lập công đoàn Việt Nam","Kỷ niệm Cách mạng Tháng 8 thành công","Quốc Khánh","Thành lập Mặt trận Tổ quốc Việt Nam","Quốc tế người cao tuổi","Ngày giải phóng Thủ Đô","Doanh nhân Việt Nam","Phụ nữ Việt Nam","Halloween","Pháp luật Việt Nam","Quốc tế Nam giới","Nhà giáo Việt Nam","Thành lập Hội chữ thập đỏ Việt Nam","Lễ Tạ Ơn","Black Friday","Thế giới phòng chống AIDS","Toàn quốc kháng chiến","Lễ Giáng Sinh","Thành lập Quân đội nhân dân Việt Nam");
 var NGAY_LE_AL = new Array("1/1","15/1","3/3","10/3","15/4","5/5","7/7","15/7","15/8","9/9","10/10","15/10","23/12");
 var NGAY_LE_AL_STRING = new Array("Tết Nguyên Đán","Tết Nguyên Tiêu","Tết Hàn Thực, Tiết Thanh Minh","Giỗ tổ Hùng Vương","Lễ Phật Đản","Tết Đoan Ngọ","Lễ Thất Tịch","Lễ Vu Lan","Tết Trung Thu","Tết Trùng Cửu","Tết Trùng Thập","Tết Hạ Nguyên","Ông Táo Về Trời");
 
@@ -570,9 +570,9 @@ function printStyle() {
 	//res += '  body {margin:0}\n';
 	res += '  .tennam {text-align:center; font-size:150%; line-height:120%; font-weight:bold; color:#000000; background-color: #CCCCCC}\n';
 	if (getTodayLunarString() == 1)
-		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(80%, 90%, 100%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
+		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(50%, 60%, 70%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
 	else if (getTodayLunarString() == 15)
-		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(80%, 90%, 100%); font-weight:bold; color:rgba(255, 255, 0, 1); background-color:none;}\n';
+		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(50%, 60%, 70%); font-weight:bold; color:rgba(255, 255, 0, 1); background-color:none;}\n';
 	res += '  .thangnam {text-align:center; font-size:clamp(80%, 90%, 100%); line-height:120%; font-weight:bold; color:#000000; background-color: rgba(204, 255, 204, 0.5)}\n';
 	res += '  .thangnam_amlich {text-align:right; font-size:clamp(80%, 90%, 100%); text-shadow:none; color:#000000; font-weight:bold;  background-color:none;}\n';
 	res += '  .ThangNgayGioTiet {text-align:right; font-size:clamp(50%, 60%, 70%); text-shadow:none; color:#000000; font-weight:bold;  background-color:none;}\n';
@@ -623,7 +623,7 @@ function printTable(mm, yy) {
 		res += ('<tr border="0"><td colspan="7" border="0">\n');
 			res += ('<table align="center" height="100%" width="100%" border="0" cellpadding="0" cellspacing="0" >\n');
 				res += ('<tr><td class="todayduonglich" style="text-align:center;" colspan="5">'+getNowDaySolarString()+'</td></tr>\n');
-				res += ('<tr><td class="thutrongtuan" colspan="5"><div style="margin-left:auto; margin-right:auto; width:22%; border-radius:6px; background-color:rgba(204, 255, 204, 0.5);">'+getNowDayOfWeekString()+'</div></td></tr>\n');
+				res += ('<tr><td class="thutrongtuan" colspan="5"><div style="margin-left:auto; margin-right:auto; width:20%; border-radius:6px; background-color:rgba(204, 255, 204, 0.5);">'+getNowDayOfWeekString()+'</div></td></tr>\n');
 				res += ('<tr><td width="34%" colspan="2">\n');
 					res += ('<div class="thangnam_amlich" style="text-align:center;">'+getNowMonthStringLunar()+'</div>\n');
 					res += ('<div class="ngayamlich">'+getTodayLunarString()+'</div>\n');
