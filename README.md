@@ -11,6 +11,7 @@ Mình có làm thêm hiển thị thông tin ngày âm ra html.
  - Hiển thị các ngày Lễ, Tết Dương Lịch và Âm Lịch
 
 ![image](https://github.com/user-attachments/assets/deadc722-af0b-48a7-848f-6c9bfa9d24e1)
+![image](https://github.com/user-attachments/assets/728615a0-1f73-416f-9a4d-62c8b4f01659)
 
 
 **Hướng dẫn:**
