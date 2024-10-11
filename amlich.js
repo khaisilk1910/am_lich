@@ -570,10 +570,10 @@ function printStyle() {
 	//res += '  body {margin:0}\n';
 	res += '  .tennam {text-align:center; font-size:150%; line-height:120%; font-weight:bold; color:#000000; background-color: #CCCCCC}\n';
 	if (getTodayLunarString() == 1)
-		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(60%, 70%, 80%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
+		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto;  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;  font-size:clamp(70%, 80%, 90%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
 	else if (getTodayLunarString() == 15)
-		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(60%, 70%, 80%); font-weight:bold; color:rgba(255, 255, 0, 1); background-color:none;}\n';
-	else res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(60%, 70%, 80%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
+		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto;  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;  font-size:clamp(70%, 80%, 90%); font-weight:bold; color:rgba(255, 255, 0, 1); background-color:none;}\n';
+	else res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto;  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;  font-size:clamp(70%, 80%, 90%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
 	res += '  .thangnam {text-align:center; font-size:clamp(80%, 90%, 100%); line-height:120%; font-weight:bold; color:#000000; background-color: rgba(204, 255, 204, 0.5)}\n';
 	res += '  .thangnam_amlich {text-align:right; font-size:clamp(80%, 90%, 100%); text-shadow:none; color:#000000; font-weight:bold;  background-color:none;}\n';
 	res += '  .ThangNgayGioTiet {text-align:right; font-size:clamp(50%, 60%, 70%); text-shadow:none; color:#000000; font-weight:bold;  background-color:none;}\n';
@@ -595,14 +595,16 @@ function printStyle() {
 	res += '  .navi-l {text-align:center; font-size:75%; line-height:100%; font-family:Verdana,Times New Roman,Arial; font-weight:bold; color:red; background-color: #CCFFCC}\n';
 	res += '  .navi-r {text-align:center; font-size:75%; line-height:100%; font-family:Verdana,Arial,Times New Roman; font-weight:bold; color:#330033; background-color: #CCFFCC}\n';
 	res += '  .ngaytuan {width:14%; text-align:center; font-size:125%; line-height:100%; color:#330033; background-color: #FFFFCC}\n';
+	res += '  .ngaytuan_t7 {width:14%; text-align:center; font-size:125%; line-height:100%; color:green; background-color: #FFFFCC}\n';
+	res += '  .ngaytuan_cn {width:14%; text-align:center; font-size:125%; line-height:100%; color:#ff0000; background-color: #FFFFCC}\n';
 	res += '  .ngaythang {background-color:#FDFDF0}\n';
 	res += '  .homnay {background-color:#FFF000}\n';
 	res += '  .tet {background-color:#FFCC99}\n';
-	res += '  .am {text-align:right;font-size:75%;line-height:100%;color:blue}\n';
-	res += '  .am2 {text-align:right;font-size:75%;line-height:100%;color:#004080}\n';
-	res += '  .t2t6 {text-align:left;font-size:125%;color:black}\n';
-	res += '  .t7 {text-align:left;font-size:125%;line-height:100%;color:green}\n';
-	res += '  .cn {text-align:left;font-size:125%;line-height:100%;color:red}\n';
+	res += '  .am {text-align:right; font-size:75%; line-height:100%; color:blue}\n';
+	res += '  .am2 {text-align:right; font-size:75%; line-height:100%; color:#004080}\n';
+	res += '  .t2t6 {text-align:left; font-size:145%; color:black}\n';
+	res += '  .t7 {text-align:left; font-size:145%; line-height:100%; color:green}\n';
+	res += '  .cn {text-align:left; font-size:145%; line-height:100%; color:red}\n';
 	res += '-->\n';
 	res += '</style>\n';
 	return res;
@@ -700,7 +702,11 @@ function printHead(mm, yy) {
 	//res += ('<tr><td colspan="7" class="tenthang"><a href="'+getNextMonthLink(mm, yy)+'"><img src="right.gif" alt="Next"></a></td></tr>\n');
 	res += ('<tr onClick="alertAbout();">\n');
 	for(var i=0;i<=6;i++) {
-		res += ('<td class=ngaytuan>'+DAYNAMES[i]+'</td>\n');
+		if (DAYNAMES[i] == 'CN') {
+			res += ('<td class=ngaytuan_cn>'+DAYNAMES[i]+'</td>\n'); 
+		} else if (DAYNAMES[i] == 'T7') {
+			res += ('<td class=ngaytuan_t7>'+DAYNAMES[i]+'</td>\n');
+		} else res += ('<td class=ngaytuan>'+DAYNAMES[i]+'</td>\n');
 	}
 	res += ('<\/tr>\n');
 	return res;
