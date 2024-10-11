@@ -598,13 +598,13 @@ function printStyle() {
 	res += '  .ngaytuan_t7 {width:14%; text-align:center; font-size:125%; line-height:100%; color:green; background-color: #FFFFCC}\n';
 	res += '  .ngaytuan_cn {width:14%; text-align:center; font-size:125%; line-height:100%; color:#ff0000; background-color: #FFFFCC}\n';
 	res += '  .ngaythang {background-color:#FDFDF0}\n';
-	res += '  .homnay {background-color:#FFF000}\n';
+	res += '  .homnay {font-weight:bold; background-color:#FFF000}\n';
 	res += '  .tet {background-color:#FFCC99}\n';
-	res += '  .am {text-align:right; font-size:75%; line-height:100%; color:blue}\n';
-	res += '  .am2 {text-align:right; font-size:75%; line-height:100%; color:#004080}\n';
-	res += '  .t2t6 {text-align:left; font-size:145%; color:black}\n';
-	res += '  .t7 {text-align:left; font-size:145%; line-height:100%; color:green}\n';
-	res += '  .cn {text-align:left; font-size:145%; line-height:100%; color:red}\n';
+	res += '  .am {text-align:right; padding-right:3px; font-size:65%; line-height:100%; color:blue}\n';
+	res += '  .am2 {text-align:right; padding-right:3px; font-size:65%; line-height:100%; color:#004080}\n';
+	res += '  .t2t6 {text-align:left; font-size:125%; color:black}\n';
+	res += '  .t7 {text-align:left; font-size:125%; line-height:100%; color:green}\n';
+	res += '  .cn {text-align:left; font-size:125%; line-height:100%; color:red}\n';
 	res += '-->\n';
 	res += '</style>\n';
 	return res;
@@ -694,11 +694,11 @@ function printHead(mm, yy) {
 	var res = "";
 	var monthName = mm+"/"+yy;
 	//res += ('<tr><td colspan="7" class="tenthang" onClick="showMonthSelect();">'+monthName+'</td></tr>\n');
-	res += ('<tr><td colspan="2" class="navi-l">'+getPrevYearLink(mm, yy)+' &nbsp;'+getPrevMonthLink(mm, yy)+'</td>\n');
+	res += ('<tr><td colspan="2" class="navi-l">'+getPrevYearLink(mm, yy)+' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+getPrevMonthLink(mm, yy)+'</td>\n');
 	//res += ('<td colspan="1" class="navig"><a href="'+getPrevMonthLink(mm, yy)+'"><img src="left1.gif" alt="Prev"></a></td>\n');
 	res += ('<td colspan="3" class="tenthang" onClick="showMonthSelect();">'+monthName+'</td>\n');
 	//res += ('<td colspan="1" class="navi-r"><a href="'+getNextMonthLink(mm, yy)+'"><img src="right1.gif" alt="Next"></a></td>\n');
-	res += ('<td colspan="2" class="navi-r">'+getNextMonthLink(mm, yy)+' &nbsp;'+getNextYearLink(mm, yy)+'</td></tr>\n');
+	res += ('<td colspan="2" class="navi-r">'+getNextMonthLink(mm, yy)+' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+getNextYearLink(mm, yy)+'</td></tr>\n');
 	//res += ('<tr><td colspan="7" class="tenthang"><a href="'+getNextMonthLink(mm, yy)+'"><img src="right.gif" alt="Next"></a></td></tr>\n');
 	res += ('<tr onClick="alertAbout();">\n');
 	for(var i=0;i<=6;i++) {
@@ -748,7 +748,7 @@ function printCell(lunarDate, solarDate, solarMonth, solarYear) {
 	args += ("," + lunarDate.jd + "," + solarDate + "," + solarMonth + "," + solarYear);
 	res += ('<td class="'+cellClass+'"');
 	if (lunarDate != null) res += (' title="'+getDayName(lunarDate)+'" onClick="alertDayInfo('+args+');"');
-	res += (' <div style=color:'+solarColor+' class="'+solarClass+'">'+solarDate+'</div> <div class="'+lunarClass+'">'+lunar+'</div></td>\n');
+	res += (' <div style="font-size:125%; text-align:center; color:'+solarColor+'" class="'+solarClass+'">'+solarDate+'</div> <div style="font-size:50%;" class="'+lunarClass+'">'+lunar+'</div></td>\n');
 	return res;
 }
 
