@@ -570,9 +570,10 @@ function printStyle() {
 	//res += '  body {margin:0}\n';
 	res += '  .tennam {text-align:center; font-size:150%; line-height:120%; font-weight:bold; color:#000000; background-color: #CCCCCC}\n';
 	if (getTodayLunarString() == 1)
-		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(50%, 60%, 70%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
+		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(60%, 70%, 80%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
 	else if (getTodayLunarString() == 15)
-		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(50%, 60%, 70%); font-weight:bold; color:rgba(255, 255, 0, 1); background-color:none;}\n';
+		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(60%, 70%, 80%); font-weight:bold; color:rgba(255, 255, 0, 1); background-color:none;}\n';
+	else res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; font-size:clamp(60%, 70%, 80%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
 	res += '  .thangnam {text-align:center; font-size:clamp(80%, 90%, 100%); line-height:120%; font-weight:bold; color:#000000; background-color: rgba(204, 255, 204, 0.5)}\n';
 	res += '  .thangnam_amlich {text-align:right; font-size:clamp(80%, 90%, 100%); text-shadow:none; color:#000000; font-weight:bold;  background-color:none;}\n';
 	res += '  .ThangNgayGioTiet {text-align:right; font-size:clamp(50%, 60%, 70%); text-shadow:none; color:#000000; font-weight:bold;  background-color:none;}\n';
