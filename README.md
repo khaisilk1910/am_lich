@@ -7,10 +7,10 @@ Mình có làm thêm hiển thị thông tin ngày âm ra html.
 
  - Tự động thay ảnh nền mỗi ngày trong tuần
  - Đổi màu Thứ và Ngày Dương vào Thứ 7 và Chủ Nhật
+ - Hiển thị tháng thiếu (T), tháng đủ (Đ) Âm Lịch
  - Hiển thị thêm Ngày Mùng 1 và Ngày Rằm hàng tháng
  - Hiển thị các ngày Lễ, Tết Dương Lịch và Âm Lịch
 
-![image](https://github.com/user-attachments/assets/6b8edce3-68d6-4bcf-8c2f-9e83e0ce2d7e)
 ![image](https://github.com/user-attachments/assets/515c2fe4-759f-46be-9f30-af682d6db67d)
 
 
