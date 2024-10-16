@@ -467,8 +467,28 @@ function getLeTetAmLichInfor() {
 	}
 }
 
+// Hàm kiểm tra tháng âm lịch là tháng đủ (30 ngày) hay thiếu (29 ngày)
+function isLunarMonthFull(lunarYear, lunarMonth) {
+    // Lấy thông tin mã hóa nhị phân của năm âm lịch tương ứng
+    let yearInfo = TK21[lunarYear - 1900];
+    // Kiểm tra bit tương ứng với tháng âm lịch
+    return (yearInfo & (0x10000 >> lunarMonth)) !== 0;
+}
 
+// Hàm hiển thị xem tháng âm lịch hiện tại là tháng đủ (Đ) hay tháng thiếu (T)
+function showLunarMonthFull() {
+    let t = getTodayMonthLunarInt();  // Hàm này phải được định nghĩa ở nơi khác
+    let lunarYear = 2024;
 
+    let isFullMonth = isLunarMonthFull(lunarYear, t);
+    let s;
+    if (isFullMonth) {
+        s = ' (Đ)';  // Đ = Đủ (30 ngày)
+    } else {
+        s = ' (T)';  // T = Thiếu (29 ngày)
+    }
+    return s;  // Trả về kết quả
+}
 
 
 
@@ -628,7 +648,7 @@ function printTable(mm, yy) {
 				res += ('<tr><td class="todayduonglich" style="text-align:center;" colspan="5">'+getNowDaySolarString()+'</td></tr>\n');
 				res += ('<tr><td class="thutrongtuan" colspan="5"><div style="margin-left:auto; margin-right:auto; width:20%; border-radius:6px; background-color:rgba(204, 255, 204, 0.5);">'+getNowDayOfWeekString()+'</div></td></tr>\n');
 				res += ('<tr><td width="34%" colspan="2">\n');
-					res += ('<div class="thangnam_amlich" style="text-align:center;">'+getNowMonthStringLunar()+'</div>\n');
+					res += ('<div class="thangnam_amlich" style="text-align:center;">'+getNowMonthStringLunar()+showLunarMonthFull()+'</div>\n');
 					res += ('<div class="ngayamlich">'+getTodayLunarString()+'</div>\n');
 					res += ('<div class="thangnam_amlich" style="text-align:center; line-height:160%;">'+getNowLunarYearString()+'</div>\n');
 				res += ('<td class="thongtin_letet">');
