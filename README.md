@@ -10,7 +10,7 @@ Mình có làm thêm hiển thị thông tin ngày âm ra html.
  - Hiển thị thêm Ngày Mùng 1 và Ngày Rằm hàng tháng
  - Hiển thị các ngày Lễ, Tết Dương Lịch và Âm Lịch
 
-![image](https://github.com/user-attachments/assets/deadc722-af0b-48a7-848f-6c9bfa9d24e1)
+![image](https://github.com/user-attachments/assets/6b8edce3-68d6-4bcf-8c2f-9e83e0ce2d7e)
 ![image](https://github.com/user-attachments/assets/728615a0-1f73-416f-9a4d-62c8b4f01659)
 
 
