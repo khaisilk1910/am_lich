@@ -67,8 +67,8 @@ var TIETKHI = new Array("Xu\u00E2n Ph\u00E2n", "Thanh Minh", "C\u1ED1c V\u0169",
 	"Thu Ph\u00E2n", "H\u00E0n l\u1ED9", "S\u01B0\u01A1ng Gi\u00E1ng", "L\u1EADp \u0111\u00F4ng", "Ti\u1EC3u Tuy\u1EBFt", "\u0110\u1EA1i Tuy\u1EBFt",
 	"\u0110\u00F4ng Ch\u00ED", "Ti\u1EC3u H\u00E0n", "\u0110\u1EA1i H\u00E0n", "L\u1EADp Xu\u00E2n", "V\u0169 Th\u1EE7y", "Kinh Tr\u1EADp"
 );
-var NGAY_LE_DL = new Array("1/1","9/1","3/2","14/2","27/2","8/3","20/3","22/3","26/3","31/3","1/4","30/4","1/5","7/5","12/5","19/5","1/6","18/6","21/6","28/6","11/7","27/7","28/7","19/8","2/9","10/9","1/10","10/10","13/10","20/10","31/10","9/11","19/11","20/11","23/11","28/11","29/11","1/12","19/12","25/12","22/12","16/10");
-var NGAY_LE_DL_STRING = new Array("Tết Dương lịch","Truyền thống học sinh, sinh viên Việt Nam","Thành lập Đảng Cộng Sản Việt Nam","Lễ tình nhân","Thầy thuốc Việt Nam","Quốc tế Phụ nữ","Quốc tế Hạnh phúc","Nước sạch Thế giới","Thành lập Đoàn TNCS Hồ Chí Minh","Lễ Phục Sinh","Cá tháng Tư","Giải phóng Miền Nam","Quốc tế Lao động","Chiến thắng Điện Biên Phủ","Ngày của Mẹ","Ngày sinh Chủ tịch Hồ Chí Minh","Quốc tế Thiếu Nhi","Ngày của Cha","Báo chí Việt Nam","Gia đình Việt Nam","Dân số thế giới","Thương binh liệt sĩ","Thành lập công đoàn Việt Nam","Kỷ niệm Cách mạng Tháng 8 thành công","Quốc Khánh","Thành lập Mặt trận Tổ quốc Việt Nam","Quốc tế người cao tuổi","Ngày giải phóng Thủ Đô","Doanh nhân Việt Nam","Phụ nữ Việt Nam","Halloween","Pháp luật Việt Nam","Quốc tế Nam giới","Nhà giáo Việt Nam","Thành lập Hội chữ thập đỏ Việt Nam","Lễ Tạ Ơn","Black Friday","Thế giới phòng chống AIDS","Toàn quốc kháng chiến","Lễ Giáng Sinh","Thành lập Quân đội nhân dân Việt Nam","Ngày Lương thực thế giới");
+var NGAY_LE_DL = new Array("1/1","9/1","3/2","14/2","27/2","8/3","20/3","22/3","26/3","31/3","1/4","30/4","1/5","7/5","12/5","19/5","1/6","18/6","21/6","28/6","11/7","27/7","28/7","19/8","2/9","10/9","1/10","10/10","13/10","16/10","17/10","20/10","31/10","9/11","19/11","20/11","23/11","28/11","29/11","1/12","19/12","25/12","22/12");
+var NGAY_LE_DL_STRING = new Array("Tết Dương lịch","Truyền thống học sinh, sinh viên Việt Nam","Thành lập Đảng Cộng Sản Việt Nam","Lễ tình nhân","Thầy thuốc Việt Nam","Quốc tế Phụ nữ","Quốc tế Hạnh phúc","Nước sạch Thế giới","Thành lập Đoàn TNCS Hồ Chí Minh","Lễ Phục Sinh","Cá tháng Tư","Giải phóng Miền Nam","Quốc tế Lao động","Chiến thắng Điện Biên Phủ","Ngày của Mẹ","Ngày sinh Chủ tịch Hồ Chí Minh","Quốc tế Thiếu Nhi","Ngày của Cha","Báo chí Việt Nam","Gia đình Việt Nam","Dân số thế giới","Thương binh liệt sĩ","Thành lập công đoàn Việt Nam","Kỷ niệm Cách mạng Tháng 8 thành công","Quốc Khánh","Thành lập Mặt trận Tổ quốc Việt Nam","Quốc tế người cao tuổi","Ngày giải phóng Thủ Đô","Doanh nhân Việt Nam","Ngày Lương thực thế giới","Ngày quốc tế xóa nghèo","Phụ nữ Việt Nam (20.10.1930)","Halloween","Pháp luật Việt Nam","Quốc tế Nam giới","Nhà giáo Việt Nam","Thành lập Hội chữ thập đỏ Việt Nam","Lễ Tạ Ơn","Black Friday","Thế giới phòng chống AIDS","Toàn quốc kháng chiến","Lễ Giáng Sinh","Thành lập Quân đội nhân dân Việt Nam");
 var NGAY_LE_AL = new Array("1/1","15/1","3/3","10/3","15/4","5/5","7/7","15/7","15/8","9/9","10/10","15/10","23/12");
 var NGAY_LE_AL_STRING = new Array("Tết Nguyên Đán","Tết Nguyên Tiêu","Tết Hàn Thực, Tiết Thanh Minh","Giỗ tổ Hùng Vương","Lễ Phật Đản","Tết Đoan Ngọ","Lễ Thất Tịch","Lễ Vu Lan","Tết Trung Thu","Tết Trùng Cửu","Tết Trùng Thập","Tết Hạ Nguyên","Ông Táo Về Trời");
 
@@ -422,12 +422,21 @@ function getNowMonthStringLunar() {
 	var s = getNowMonthLunarString(currentLunarDate, today.getDate(), today.getMonth()+1, today.getFullYear());
 	return s;
 }
+
+
 //Lấy năm Âm Can Chi hôm nay
 function getLunarYearString(lunar, solarDay, solarMonth, solarYear) {
 	var s1;
 	s1 = lunar.year;
 	return s1;
 }
+//Lấy năm Âm Lịch hôm nay
+function getNowLunarYearNow() {
+	var s1 = getLunarYearString(currentLunarDate, today.getDate(), today.getMonth()+1, today.getFullYear());
+	var s2 = currentLunarDate.year
+	return s2;
+}
+//Lấy năm Âm Can Chi hôm nay
 function getNowLunarYearString() {
 	var s1 = getLunarYearString(currentLunarDate, today.getDate(), today.getMonth()+1, today.getFullYear());
 	var s2 = getYearCanChi(s1)
@@ -478,8 +487,7 @@ function isLunarMonthFull(lunarYear, lunarMonth) {
 // Hàm hiển thị xem tháng âm lịch hiện tại là tháng đủ (Đ) hay tháng thiếu (T)
 function showLunarMonthFull() {
     let t = getTodayMonthLunarInt();  // Hàm này phải được định nghĩa ở nơi khác
-    let lunarYear = 2024;
-
+    let lunarYear = getNowLunarYearNow();
     let isFullMonth = isLunarMonthFull(lunarYear, t);
     let s;
     if (isFullMonth) {
@@ -589,10 +597,8 @@ function printStyle() {
 	res += '<!--\n';
 	//res += '  body {margin:0}\n';
 	res += '  .tennam {text-align:center; font-size:150%; line-height:120%; font-weight:bold; color:#000000; background-color: #CCCCCC}\n';
-	if (getTodayLunarString() == 1)
-		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto;  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;  font-size:clamp(70%, 80%, 90%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
-	else if (getTodayLunarString() == 15)
-		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto;  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;  font-size:clamp(70%, 80%, 90%); font-weight:bold; color:rgba(255, 255, 0, 1); background-color:none;}\n';
+	if (getTodayLunarString() == 1 || getTodayLunarString() == 15)
+		res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto; text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;  font-size:clamp(70%, 80%, 90%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
 	else res += '  .thongtin_letet {text-align:center; margin-left:auto; margin-right:auto;  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;  font-size:clamp(70%, 80%, 90%); font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;}\n';
 	res += '  .thangnam {text-align:center; font-size:clamp(80%, 90%, 100%); line-height:120%; font-weight:bold; color:#000000; background-color: rgba(204, 255, 204, 0.5)}\n';
 	res += '  .thangnam_amlich {text-align:right; font-size:clamp(80%, 90%, 100%); text-shadow:none; color:#000000; font-weight:bold;  background-color:none;}\n';
@@ -650,18 +656,18 @@ function printTable(mm, yy) {
 				res += ('<tr><td width="34%" colspan="2">\n');
 					res += ('<div class="thangnam_amlich" style="text-align:center;">'+getNowMonthStringLunar()+showLunarMonthFull()+'</div>\n');
 					res += ('<div class="ngayamlich">'+getTodayLunarString()+'</div>\n');
-					res += ('<div class="thangnam_amlich" style="text-align:center; line-height:160%;">'+getNowLunarYearString()+'</div>\n');
+					res += ('<div class="thangnam_amlich" style="text-align:center; line-height:160%;">'+getNowLunarYearString()+' ('+getNowLunarYearNow()+')</div>\n');
 				res += ('<td class="thongtin_letet">');
 				if (getTodayLunarString() == 1)
-					res += 	('<div>Mùng Một</div>');
+					res += 	('<div style="padding-bottom: 8px;">Mùng Một</div>');
 				else if (getTodayLunarString() == 15)
-					res += 	('<div>Ngày Rằm</div>');
-				res += ('<div style="text-align:center; margin-left:auto; margin-right:auto; font-size:120%; font-weight:bold; color:rgba(255, 0, 0, 1); background-color:none;">'+getLeTetDuongLichInfor() +'<br>'+getLeTetAmLichInfor()+'</div>');
+					res += 	('<div style="padding-bottom: 8px;">Ngày Rằm</div>');
+				res += ('<div>'+getLeTetDuongLichInfor() +'<br>'+getLeTetAmLichInfor()+'</div>');
 				res += ('</td>\n');
 				res += ('</td><td width="34%" colspan="2">\n');
 					res += ('<div class="ThangNgayGioTiet1" style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Tháng: </i>'+getNowLunarMonthCanChi()+'</div>\n');
 					res += ('<div class="ThangNgayGioTiet1"  style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Ngày: </i>'+CAN[(jd + 9) % 10] + " " + CHI[(jd+1)%12]+'</div>\n');
-					res += ('<div class="ThangNgayGioTiet1"  style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Giờ : </i>'+getCanHour0(jd)+' '+CHI[0]+'</div>\n');
+					res += ('<div class="ThangNgayGioTiet1"  style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Giờ đầu: </i>'+getCanHour0(jd)+' '+CHI[0]+'</div>\n');
 					res += ('<div class="ThangNgayGioTiet1"  style="text-align:right; margin-right:10px;"><i class="ThangNgayGioTiet">Tiết: </i>'+TIETKHI[getSunLongitude(jd+1, 7.0)]+'</div>\n');
 					res += ('</td>\n');
 				res += ('</tr><tr><td class="giohoangdao" colspan="5">Giờ hoàng đạo:<br>'+getGioHoangDao(jd)+'</td></tr>\n');
