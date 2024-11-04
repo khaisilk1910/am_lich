@@ -479,7 +479,7 @@ function getLeTetAmLichInfor() {
 // Hàm kiểm tra tháng âm lịch là tháng đủ (30 ngày) hay thiếu (29 ngày)
 function isLunarMonthFull(lunarYear, lunarMonth) {
     // Lấy thông tin mã hóa nhị phân của năm âm lịch tương ứng
-    let yearInfo = TK21[lunarYear - 1900];
+    let yearInfo = TK21[lunarYear - 2000];
     // Kiểm tra bit tương ứng với tháng âm lịch
     return (yearInfo & (0x10000 >> lunarMonth)) !== 0;
 }
